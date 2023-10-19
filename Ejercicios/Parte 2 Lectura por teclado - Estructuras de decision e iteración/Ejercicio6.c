@@ -1,0 +1,24 @@
+Ej. 6 – Indicar la salida de los siguientes programas, sin ejecutarlos:
+a)
+#include <stdio.h>
+void main()  {
+int res, a=10 , b=4;
+res = 9 - b * b + a++;
+if ( res % 2 == 0 )
+printf ("El resultado %d es par. \n", res);
+else
+printf ("El resultado %d es impar. \n", res);
+printf ("El valor de a es %d. \n", a);
+}
+
+//El resultado 3 es impar.
+// El valor de a es 11.
+b)
+#include <stdio.h>
+int main(){
+int a = 4, b = 6;
+a -= b++ * 2;
+printf("a =  %d\t b= %d\n", a, b);
+return 0;
+}
+//a = -8     b = 7
