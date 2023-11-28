@@ -10,7 +10,7 @@ char fechavencimiento[9]
 
 desarrolar en en c sub programas para 
 
-a) partiendo desde archivo prestamos.dat y teniendo en cuenta solamente los prestamos con vencimiento en el mes de noviembre del corriente año genere simultaneamente
+a) partiendo desde archivo prestamos.dat y teniendo en cuenta solamente los prestamos con vencimiento en el mes de noviembre del corriente aÃ±o genere simultaneamente
 
 una matriz P de 100x200 donde las filas representan el nmero de socios y las columnas el numero de libro , almacenando 1 en p[i][j] si el socio i+1 debe devolvevr el libro numero j+1 0 en caso contrario
 
@@ -27,11 +27,11 @@ escribir el main.c con la invocacion subproframas desarrolados declaraciones def
 typedef struct {
     short int idsocio;
     short int idlibro;
-    char idEjemplar[9]; // Ajuste del tamaño para incluir el carácter nulo '\0'
-    char fechavencimiento[10]; // Ajuste del tamaño para incluir el carácter nulo '\0'
+    char idEjemplar[9]; // Ajuste del tamaÃ±o para incluir el carÃ¡cter nulo '\0'
+    char fechavencimiento[10]; // Ajuste del tamaÃ±o para incluir el carÃ¡cter nulo '\0'
 } Prestamo;
 
-// Función para generar la matriz y el archivo de texto
+// FunciÃ³n para generar la matriz y el archivo de texto
 void generarMatrizYArchivo(int matriz[][200]) {
     FILE *archivoPrestamos = fopen("prestamos.dat", "rb");
     FILE *archivoVencimiento = fopen("vencenoviembre.txt", "w");
@@ -41,7 +41,7 @@ void generarMatrizYArchivo(int matriz[][200]) {
         return;
     }
 
-    // Inicialización de la matriz con ceros
+    // InicializaciÃ³n de la matriz con ceros
     for (int i = 0; i < 100; i++) {
         for (int j = 0; j < 200; j++) {
             matriz[i][j] = 0;
@@ -70,7 +70,7 @@ void generarMatrizYArchivo(int matriz[][200]) {
     }
 }
 
-// Función para contar socios sin libros pendientes
+// FunciÃ³n para contar socios sin libros pendientes
 int contarSociosSinLibros(int matriz[][200]) {
     int contador = 0;
 
@@ -93,7 +93,7 @@ int contarSociosSinLibros(int matriz[][200]) {
 }
 
 int main() {
-    int matriz[100][200]; // Matriz para almacenar la información
+    int matriz[100][200]; // Matriz para almacenar la informaciÃ³n
     generarMatrizYArchivo(matriz);
 
     int sociosSinLibros = contarSociosSinLibros(matriz);
@@ -101,3 +101,71 @@ int main() {
 
     return 0;
 }
+
+
+
+
+/*Completar
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void cargarvector(int v[] , int n );
+void muestravector(int v[] , int n );
+void maximoVector(int v[] , int n ,int *max);
+
+int main (){
+
+int N , maximo ;
+int v[_______]  // V tiene 20 posiciones 
+
+printf(" ingrese la cantidad de datos");
+scanf("%d" , &N);
+
+cargar vector(v,n);
+printf("el vector es " );
+muestravector(v,n);
+maximo vector (v, n,&maximo)
+printf(" el maxomo es %d" ,maximo);
+
+return 0 ;
+}
+
+void cargarvector ( int v[] , int N){
+int i;
+for (i=0 ; i<N ; i++) {
+printf( "ingrese la posicion %2d del vector" ,v[i+1] );
+scanf( "%d" , & V [i+1]);
+
+}
+
+
+void muestravector( int v[] , int n ){
+int i ;
+printf("%d" , v[1] );
+for ( i=1 ; i<N ; i++) 
+printf("%d" , v[i] );
+}
+
+void maximoVector ( int v[]; int N , int *max){
+int i ;
+*max=v[0];
+for (i=0; i<N ; i++)
+if (*max < v[i] )
+  * max = v{i];
+  }
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
