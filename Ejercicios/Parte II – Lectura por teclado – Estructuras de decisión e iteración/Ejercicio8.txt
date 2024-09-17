@@ -1,0 +1,25 @@
+ Reescribir las siguientes sentencias utilizando el operador condicional:
+a. if (x > 0) 
+ y = 1;
+ else 
+ y = 0;
+ 
+ y = (x>0) ? 1:0 ;
+ 
+ 
+b. if (strcmp(luz_semaforo, "VERDE") == 0)
+ strcpy(accion ,"avanzar");
+ else 
+ if (strcmp(luz_semaforo, "AMARILLO") == 0)
+ strcpy(accion ,"precaucion");
+ else 
+ strcpy(accion ,"detenerse");
+ 
+ strcpy(accion, (strcmp(luz_semaforo, "VERDE") == 0) ? "avanzar" :
+                    (strcmp(luz_semaforo, "AMARILLO") == 0) ? "precaucion" : 
+                    "detenerse");
+ 
+
+ 
+ 
+ 

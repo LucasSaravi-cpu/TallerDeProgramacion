@@ -1,0 +1,45 @@
+Reescribir las siguientes sentencias con su equivalente en if:
+
+a. x = ( y<z ) ? y : z ;
+
+if ( y<z) {
+  x=y;
+} else { 
+  x=z;
+}
+
+
+b. printf ("%s", ( i%2 == 0 ) ? "es par" : "es impar" );
+
+
+if (i%2 == 0 ) {
+  printf("es par " );
+  }else{
+  printf (" es impar");
+
+}
+
+c. descuento = (strcmp(cliente,"VIP") ==0)? 0.2 : 0.1;
+
+if ( strcmp(cliente,"VIP") == 0) {
+descuento = 0.2;
+}else{
+descuento = 0.1;
+}
+
+d. strcpy(resultado,(nota>=nota_aprobacion) ?b"aprobado": "reprobado"); 
+
+if (nota >= nota_aprobacion) {
+  strcpy(resultado, "aprobado");
+} else {
+  strcpy(resultado, "reprobado");
+}
+
+
+e. printf("%s \n", (temp>=30 && humedad>80)?"Sofocante”: "Agradable");
+
+if (temp >= 30 && humedad > 80) {
+  printf("Sofocante\n");
+} else {
+  printf("Agradable\n");
+}

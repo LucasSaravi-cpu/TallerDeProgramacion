@@ -1,0 +1,19 @@
+Detectar y corregir los errores de los siguientes fragmentos de código:
+
+a. #define N 50
+int i;
+ for(i = 5; i <= N; i+=5);
+ printf("%d", &i);
+ 
+//El error esta en que el cuando se usa el printf no se usa '&' solo se usa cuando usas scanf
+ 
+ 
+ 
+ 
+b. float fahrenheit, celsius;
+printf("Ingrese la temperatura en Fahrenheit: ");
+scanf("%s", fahrenheit);
+celsius = fahrenheit - 32 * 5 / 9;
+printf("La temperatura en Celsius es %.2d\n", celsius);
+
+//El error esta en que no es %s es %f por que es un float  luego es %.2f . El %d se usa con para enteros 

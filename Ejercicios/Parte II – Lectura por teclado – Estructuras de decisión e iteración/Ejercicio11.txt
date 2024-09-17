@@ -1,0 +1,70 @@
+Transformar las siguientes sentencias utilizando la instrucción switch (x es int, F es char).
+a. if (F == 's ' || F == 'S')
+      r = x + y;
+   else 
+      if (F == 'r' || F == 'R')
+         r = x - y; 
+     else 
+         if (F == 'm' || F == 'M')
+            r = x * y;
+        else 
+            if (F == 'd' || F == 'D')
+                r = x/y;
+            else 
+                 r = 0;
+
+    switch (F) {
+        case 's':
+        case 'S':
+            r = x + y;
+            break;
+        case 'r':
+        case 'R':
+            r = x - y;
+            break;
+        case 'm':
+        case 'M':
+            r = x * y;
+            break;
+        case 'd':
+        case 'D':
+            if (y != 0) { // Verifica si no hay división por cero
+                r = x / y;
+            } else {
+                // Manejo de error si y es 0
+                printf("Error: División por cero\n");
+                r = 0;
+            }
+            break;
+        default:
+            r = 0;
+            break;
+
+
+
+b. if (x == 4)
+      y = 7;
+   else 
+      if (x == 5)
+         y = 9;
+      else 
+         if(x == 9)
+           y = 14;
+         else 
+           y = 22;
+		   
+		  
+ switch (x) {
+        case 4:
+            y = 7;
+            break;
+        case 5:
+            y = 9;
+            break;
+        case 9:
+            y = 14;
+            break;
+        default:
+            y = 22;
+            break;
+    }

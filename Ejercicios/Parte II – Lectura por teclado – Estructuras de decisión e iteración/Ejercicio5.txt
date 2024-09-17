@@ -1,0 +1,7 @@
+Dadas las declaraciones siguientes, completar la función scanf() con la expresión más apropiada
+
+char x, cadena[25]; 
+int n;
+scanf("%d",&n);
+scanf("%c",&x);
+scanf("%s", cadena);
