@@ -1,3 +1,4 @@
+/*Leer un numero entero y hallar y mostrar cuantos digitos tiene */
 #include <stdio.h>
 #include <math.h>
 
@@ -21,7 +22,7 @@ int main() {
         digito = (int)log10(num) + 1;
     }
 
-    // Mostrar el número de dígitos
+    // Mostrar el nÃºmero de dÃ­gitos
     printf("El numero tiene %d digitos \n", digito);
 
     return 0;
