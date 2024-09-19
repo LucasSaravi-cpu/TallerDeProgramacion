@@ -1,5 +1,6 @@
+/*LEER N CARATERES Y HALLAR Y ESCRIBIR LA CANTIDAD DE LETRAS MAYUSCUCLAS INGRESADAS*/
 #include <stdio.h>
-#include <ctype.h> // Para la función isupper
+#include <ctype.h> // Para la funciÃ³n isupper
 
 int main() {
     int N;
@@ -28,7 +29,7 @@ int main() {
     }
 
 
-    printf("Cantidad de letras mayúsculas: %d\n", conteoMayusculas);
+    printf("Cantidad de letras mayÃºsculas: %d\n", conteoMayusculas);
 
     return 0;
 }
