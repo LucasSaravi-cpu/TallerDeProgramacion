@@ -1,3 +1,7 @@
+/*Dadas N edades, determinar e informar si cada persona es niño, adolescente, adulto joven o adulto, 
+según la edad ingresada por el usuario. Niño se es hasta los 11, adolescente hasta los 17 y adulto 
+joven hasta los 25. [Nota: todas las edades dadas se incluyen en su categoría]. Informar además la 
+cantidad de personas en cada categoría y la categoría mas númerosa*/
 #include <stdio.h>
 
 int main() {
@@ -23,7 +27,7 @@ int main() {
         scanf("%d", &edad);
 
         if (edad <= 11) {
-            printf("La persona es un ni�o.\n");
+            printf("La persona es un niño.\n");
             cantidadNino++;
         } else if (edad <= 17) {
             printf("La persona es un adolescente.\n");
@@ -38,20 +42,20 @@ int main() {
     }
 
 
-    printf("\nCantidad de ni�os: %d\n", cantidadNino);
+    printf("\nCantidad de niños: %d\n", cantidadNino);
     printf("Cantidad de adolescentes: %d\n", cantidadAdolescente);
-    printf("Cantidad de adultos j�venes: %d\n", cantidadJoven);
+    printf("Cantidad de adultos jóvenes: %d\n", cantidadJoven);
     printf("Cantidad de adultos: %d\n", cantidadAdulto);
 
 
     if (cantidadNino >= cantidadAdolescente && cantidadNino >= cantidadJoven && cantidadNino >= cantidadAdulto) {
-        printf("La categor�a m�s numerosa es 'ni�o'.\n");
+        printf("La categoría más numerosa es 'niño'.\n");
     } else if (cantidadAdolescente >= cantidadJoven && cantidadAdolescente >= cantidadAdulto) {
-        printf("La categor�a m�s numerosa es 'adolescente'.\n");
+        printf("La categoría más numerosa es 'adolescente'.\n");
     } else if (cantidadJoven >= cantidadAdulto) {
-        printf("La categor�a m�s numerosa es 'adulto joven'.\n");
+        printf("La categoría más numerosa es 'adulto joven'.\n");
     } else {
-        printf("La categor�a m�s numerosa es 'adulto'.\n");
+        printf("La categoría más numerosa es 'adulto'.\n");
     }
 
     return 0;
