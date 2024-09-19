@@ -9,8 +9,7 @@ int main() {
     printf("Ingrese el numero de caracteres a leer: ");
     scanf("%d", &N);
 
-    // Limpiar el buffer de entrada para evitar problemas con fgets
-    while (getchar() != '\n');
+   fflush(stdio);
 
     char caracteres[N];
 
