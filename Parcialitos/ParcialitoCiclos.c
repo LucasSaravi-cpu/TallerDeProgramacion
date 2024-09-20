@@ -21,8 +21,8 @@ int main() {
         scanf("%d", &altura);
     } while (altura < 3 || altura > 10 || altura % 2 == 0);
 
-    fflush(stdout);
-    printf("Ingrese el car·cter para dibujar el triangulo: ");
+    fflush(stdin);
+    printf("Ingrese el car√°cter para dibujar el triangulo: ");
     scanf(" %c", &caracter);
 
 
