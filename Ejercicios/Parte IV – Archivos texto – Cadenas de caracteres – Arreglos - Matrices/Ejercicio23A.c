@@ -1,24 +1,24 @@
-/*  contar el número de líneas en un archivo de texto.*/
+/*  contar el nÃºmero de lÃ­neas en un archivo de texto.*/
 
 #include <stdio.h>
 
 int main() {
-    FILE *file;
+    FILE *archivo;
     char line[256];
     int lines = 0;
 
-    file = fopen("archivo.txt", "r");
-    if (file == NULL) {
+    archivo= fopen("archivo.txt", "r");
+    if (archivo== NULL) {
         printf("Error al abrir el archivo\n");
         return 1;
     }
 
 
-    while (fscanf(file, "%255[^\n]\n", line) == 1) {
+    while (fscanf(archivo, "%s \n", line) == 1) {
         lines++;
     }
 
-    fclose(file);
+    fclose(archivo);
     printf("El numero de lineas del archivo es de : %d\n", lines);
     return 0;
 }
