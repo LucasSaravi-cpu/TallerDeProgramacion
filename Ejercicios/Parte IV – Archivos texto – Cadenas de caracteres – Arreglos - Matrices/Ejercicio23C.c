@@ -1,5 +1,6 @@
-/* contar el número de palabras en un archivo de texto, considerando que las palabras están separadas
-por espacios, tabulaciones o saltos de líneas*/
+/* buscar una palabra especÃ­fica (leÃ­da desde teclado previamente) en un archivo de texto e indicar
+cuÃ¡ntas veces aparece.
+*/
 #include <stdio.h>
 #include <string.h>
 
