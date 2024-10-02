@@ -1,6 +1,6 @@
-/*   Leer de un archivo de texto FRAC.TXT que contiene dos fracciones por línea: numerador 1,
-denominador 1, numerador 2, denominador 2. Para cada línea obtener y mostrar la suma de ambas
-fracciones, como número real con tres decimales. Si el resultado es un número entero, mostrarlo
+/*   Leer de un archivo de texto FRAC.TXT que contiene dos fracciones por lÃ­nea: numerador 1,
+denominador 1, numerador 2, denominador 2. Para cada lÃ­nea obtener y mostrar la suma de ambas
+fracciones, como nÃºmero real con tres decimales. Si el resultado es un nÃºmero entero, mostrarlo
 como tal.
 Ejemplos: 2 3 1 2 resultado 1.166 ; 4 3 2 3 resultado 2 ; 5 12 1 18 resultado 0.472  */
 
@@ -24,9 +24,9 @@ void sumarFraccionesYMostrarResultado() {
         return;
     }
 
-    double n1, d1, n2, d2, suma;
+   float n1, d1, n2, d2, suma;
 
-    while (fscanf(archivo, "%lf %lf %lf %lf", &n1, &d1, &n2, &d2) != EOF) {
+    while (fscanf(archivo, "%f %f %f %f", &n1, &d1, &n2, &d2) != EOF) {
         suma = (n1 / d1) + (n2 / d2);
         if (suma == (int)suma) {
             printf("%.0lf\n", suma);
