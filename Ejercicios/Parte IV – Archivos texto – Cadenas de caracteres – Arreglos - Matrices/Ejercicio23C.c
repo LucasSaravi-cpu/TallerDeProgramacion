@@ -5,7 +5,7 @@ cuántas veces aparece.
 #include <string.h>
 
 int main() {
-    FILE *file;
+    FILE *archivo;
     char palabra[100];
     char line[256];
     int count = 0;
@@ -13,19 +13,19 @@ int main() {
     printf("Introduce la palabra a buscar: ");
     scanf("%s", palabra);
 
-    file = fopen("archivo.txt", "r");
-    if (file == NULL) {
+    archivo = fopen("archivo.txt", "r");
+    if (archivo == NULL) {
         printf("Error al abrir el archivo\n");
         return 1;
     }
 
-    while (fscanf(file, "%255s", line) != EOF) {
+    while (fscanf(archivo, "%s", line) != EOF) {
         if (strcmp(line, palabra) == 0) {
             count++;
         }
     }
 
-    fclose(file);
+    fclose(archivo);
     printf("La palabra '%s' aparece %d veces.\n", palabra, count);
     return 0;
 }
