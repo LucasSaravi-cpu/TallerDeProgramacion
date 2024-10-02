@@ -14,7 +14,7 @@ int main() {
     }
 
 
-    while (fscanf(archivo, "%s \n", line) == 1) {
+    while (fgets(line, sizeof(line), archivo) != NULL)  {
         lines++;
     }
 
