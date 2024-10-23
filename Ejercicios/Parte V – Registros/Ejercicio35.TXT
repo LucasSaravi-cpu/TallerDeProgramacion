@@ -1,6 +1,6 @@
 Juan M 25 1.75
 Ana F 30 1.65
 Carlos M 22 1.80
-María F 28 1.70
+Maria F 28 1.70
 Pedro M 35 1.78
 Luisa F 40 1.60
