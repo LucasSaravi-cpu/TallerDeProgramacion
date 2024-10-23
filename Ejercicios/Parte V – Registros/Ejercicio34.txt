@@ -1,0 +1,9 @@
+Juan Perez
+12345
+ingenieria en informatica
+Ana Gomez
+67890
+medicina
+Carlos Garcia
+13579
+ingenieria en informatica
