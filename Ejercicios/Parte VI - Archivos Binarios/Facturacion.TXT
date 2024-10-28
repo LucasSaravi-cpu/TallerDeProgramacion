@@ -1,0 +1,10 @@
+F00000000001 Cliente A                  
+D000001 DescripcionProductoA 005000000010
+D000002 DescripcionProductoB 015000000020
+
+F00000000002 Cliente B                  
+D000003 DescripcionProductoC 010000000005
+D000004 DescripcionProductoD 020000000002
+
+F00000000003 Cliente C                  
+D000005 DescripcionProductoE 012500000003
