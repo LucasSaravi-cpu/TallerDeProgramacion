@@ -1,16 +1,16 @@
 /*
-En una escuela secundaria para el último año se tiene un archivo de texto Notas.txt con
-las notas finales de las 10 materias, el formato una línea por alumno con Número de matrícula (0 a
+En una escuela secundaria para el Ãºltimo aÃ±o se tiene un archivo de texto Notas.txt con
+las notas finales de las 10 materias, el formato una lÃ­nea por alumno con NÃºmero de matrÃ­cula (0 a
 99) y las 10 notas finales separadas por espacios (pueden no estar los 100 alumnos ni vienen
 ordenados)
-Desarrollar una función para generar una matriz de 100x10 con las notas finales donde las filas
-representan el número de matrícula y las columnas las materias (las filas que no representen
+Desarrollar una funciÃ³n para generar una matriz de 100x10 con las notas finales donde las filas
+representan el nÃºmero de matrÃ­cula y las columnas las materias (las filas que no representen
 alumnos pues no se encuentran los datos deben quedar en 0) y luego desarrollar:
-a) una función (int) que devuelva la cantidad de alumnos recibidos (todas las notas más de 4)
-b) una función (int) que devuelva la cantidad de alumnos que deben rendir más de 2 materias
+a) una funciÃ³n (int) que devuelva la cantidad de alumnos recibidos (todas las notas mÃ¡s de 4)
+b) una funciÃ³n (int) que devuelva la cantidad de alumnos que deben rendir mÃ¡s de 2 materias
 (deben rendir aquellas en las que no tienen al menos 4).
-c) una función (void) que devuelva en dos parámetros el alumno recibido con mayor nota
-promedio (número de matrícula y nota promedio final)*/
+c) una funciÃ³n (void) que devuelva en dos parÃ¡metros el alumno recibido con mayor nota
+promedio (nÃºmero de matrÃ­cula y nota promedio final)*/
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -28,12 +28,10 @@ int main() {
     archivo = fopen("Ejercicio31.txt", "r");
     if (archivo == NULL) {
         printf("Error al abrir el archivo\n");
-        return 1;
-    }
-
-    while (  fscanf(archivo, "%d %d %d %d %d %d %d %d %d %d %d",
-               &matricula, &notas[0], &notas[1], &notas[2], &notas[3],
-               &notas[4], &notas[5], &notas[6], &notas[7], &notas[8], &notas[9]) !=EOF) {
+        
+    } else{
+fscanf(archivo, "%d %d %d %d %d %d %d %d %d %d %d",&matricula, &notas[0], &notas[1], &notas[2], &notas[3], &notas[4], &notas[5], &notas[6], &notas[7], &notas[8], &notas[9]);
+    while ( !feof(archivo) ) {
 
 
         // Indexar la fila correspondiente en la matriz y guardar las notas
@@ -42,12 +40,12 @@ int main() {
                 matriz_notas[matricula][i] = notas[i];
             }
         }
-
+      fscanf(archivo, "%d %d %d %d %d %d %d %d %d %d %d",&matricula, &notas[0], &notas[1], &notas[2], &notas[3], &notas[4], &notas[5], &notas[6], &notas[7], &notas[8], &notas[9]);
 
     }
 
     fclose(archivo);
-
+    }
     // Imprimir la matriz de notas
     for (int i = 0; i < NUM_ALUMNOS; i++) {
         printf("Alumno %d: ", i);
