@@ -2,6 +2,7 @@
 mediante un menú repetitivo invoque a la función correspondiente (desarrolladas en el ejercicio anterior)
 mostrando el resultado.*/
 #include <stdio.h>
+#include <stdlib.h>
 #define MAXELEMENTOS 100
 
 // Funciones
