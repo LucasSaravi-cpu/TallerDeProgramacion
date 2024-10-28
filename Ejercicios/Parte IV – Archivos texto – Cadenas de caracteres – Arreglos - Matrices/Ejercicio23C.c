@@ -1,6 +1,9 @@
 /* buscar una palabra específica (leída desde teclado previamente) en un archivo de texto e indicar
 cuántas veces aparece.
 */
+/* buscar una palabra específica (leída desde teclado previamente) en un archivo de texto e indicar
+cuántas veces aparece.
+*/
 #include <stdio.h>
 #include <string.h>
 
@@ -16,16 +19,19 @@ int main() {
     archivo = fopen("archivo.txt", "r");
     if (archivo == NULL) {
         printf("Error al abrir el archivo\n");
-        return 1;
-    }
 
-    while (fscanf(archivo, "%s", line) != EOF) {
+    } else{
+
+    while (fscanf(archivo, "%s", line) ==1) {
         if (strcmp(line, palabra) == 0) {
             count++;
         }
     }
 
     fclose(archivo);
+
+    }
     printf("La palabra '%s' aparece %d veces.\n", palabra, count);
     return 0;
 }
+
