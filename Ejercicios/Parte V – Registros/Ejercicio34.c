@@ -22,17 +22,17 @@ int main() {
     archivo = fopen("ejercicio34.txt", "r");
     if (archivo == NULL) {
         printf("Error al abrir el archivo.\n");
-        return 1;
-    }
-
-    while (fscanf(archivo, "%29[^\n]\n%d\n%29[^\n]\n", alumnos[n].nombre, &alumnos[n].matricula, alumnos[n].carrera) != EOF) {
+     
+    }else{
+     fscanf(archivo, "%29[^\n]\n%d\n%29[^\n]\n", alumnos[n].nombre, &alumnos[n].matricula, alumnos[n].carrera);
+    while (!feof(archivo) ) {
         n++;
-
+        fscanf(archivo, "%29[^\n]\n%d\n%29[^\n]\n", alumnos[n].nombre, &alumnos[n].matricula, alumnos[n].carrera);
     }
 
 
     fclose(archivo);
-
+    }
 
     printf("Alumnos de Ingenieria en Informatica:\n");
     for (int i = 0; i < n; i++) {
