@@ -1,17 +1,18 @@
 /*Desarrollar un procedimiento en Pascal que desde un archivo de texto NUMEROS.TXT cargue datos en una
-matriz de NxN enteros (N está en la primera línea del archivo, y en la siguiente están los NxN números).
+matriz de NxN enteros (N estÃ¡ en la primera lÃ­nea del archivo, y en la siguiente estÃ¡n los NxN nÃºmeros).
 
 
 Desarrollar un procedimiento que genere un arreglo A de registros donde cada uno posea los siguientes
-campos: fila, columna y valor. En el arreglo estarán sólo los elementos de la matriz y su posición que cumplen
-que: el elemento es múltiplo del que se encuentra en la columna anterior y múltiplo del que se encuentra en
+campos: fila, columna y valor. En el arreglo estarÃ¡n sÃ³lo los elementos de la matriz y su posiciÃ³n que cumplen
+que: el elemento es mÃºltiplo del que se encuentra en la columna anterior y mÃºltiplo del que se encuentra en
 la columna siguiente. (no considerar los elementos en la columna 1 ni en la columna N)
-Desarrollar una función que, a partir de la matriz generada, obtenga y retorne la cantidad de elementos pares
+Desarrollar una funciÃ³n que, a partir de la matriz generada, obtenga y retorne la cantidad de elementos pares
 en la diagonal secundaria.
 Escribir el programa principal que invoque a los subprogramas desarrollados y que muestre el vector A. Definir
 los tipos y variables que considere necesarios*/
 
 #include <stdio.h>
+#include <stdlib.h>
 
 #define MAX 10
 
@@ -28,8 +29,8 @@ void LeeMatriz(TM mat, int *n) {
     FILE *arch = fopen("numeros.txt", "r");
     if (arch == NULL) {
         perror("No se puede abrir el archivo");
-        return;
-    }
+     
+    } else{
 
     fscanf(arch, "%d", n);
 
@@ -40,6 +41,8 @@ void LeeMatriz(TM mat, int *n) {
     }
 
     fclose(arch);
+
+    }
 }
 
 void GeneraArreglo(TM mat, int n, TV *A, int *l) {
