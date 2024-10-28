@@ -1,60 +1,53 @@
 /*
 a) Leer 10 cadenas de caracteres por teclado (pueden tener espacios) y grabarlas en un archivo
-de texto CADENAS.TXT (una por lÌnea). Desde el archivo creado, mostrar la cadena m·s larga. . */
-
+de texto CADENAS.TXT (una por l√≠nea). Desde el archivo creado, mostrar la cadena m√°s larga. . */
 
 
 #include <stdio.h>
 #include <string.h>
-
-void encontrarCadenaMasLarga();
-void leerCadenasYGrabarArchivo();
+#include <stdlib.h>
 
 
 int main() {
-    leerCadenasYGrabarArchivo();
-    encontrarCadenaMasLarga();
-    return 0;
-}
 
-
-void leerCadenasYGrabarArchivo() {
     FILE *archivo;
-    archivo = fopen("CADENAS.TXT", "w");
-
-    if (archivo == NULL) {
-        printf("Error al abrir el archivo para escritura.\n");
-        return;
-    }
+    archivo = fopen("CADENAS.TXT", "w+");
 
     char cadena[100];
+    char cadenaMasLarga[100] ;
+
+
+    strcpy(cadenaMasLarga,"");
     for (int i = 0; i < 10; i++) {
         printf("Ingrese una cadena: ");
-        scanf(" %[^\n]s", cadena);
+        scanf("%s", cadena);
         fprintf(archivo, "%s\n", cadena);
     }
 
-    fclose(archivo);
-}
+ rewind(archivo);
 
-void encontrarCadenaMasLarga() {
-    FILE *archivo;
-    archivo = fopen("CADENAS.TXT", "r");
 
-    if (archivo == NULL) {
+   if (archivo == NULL) {
         printf("Error al abrir el archivo para lectura.\n");
-        return;
-    }
 
-    char cadena[100];
-    char cadenaMasLarga[100] = "";
-    while (fgets(cadena, sizeof(cadena), archivo) != NULL) {
+    }else{
+
+  fscanf(archivo,"%s",cadena);
+     while ( !feof(archivo)) {
         if (strlen(cadena) > strlen(cadenaMasLarga)) {
             strcpy(cadenaMasLarga, cadena);
         }
+
+         fscanf(archivo,"%s",cadena);
+     }
+
+       fclose(archivo);
     }
 
-    fclose(archivo);
 
-    printf("La cadena m·s larga es:\n%s", cadenaMasLarga);
+
+
+ printf("La cadena m√°s larga es: %s\n", cadenaMasLarga);
+
+return 0;
 }
