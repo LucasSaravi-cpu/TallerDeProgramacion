@@ -1,5 +1,5 @@
-/*Dado un vector de enteros de n elementos, desarrollar una funci髇 que encuentre y devuelva la posici髇
-del m醲imo. Implementar 3 veces utilizando for, while y do while*/
+/*Dado un vector de enteros de n elementos, desarrollar una funci贸n que encuentre y devuelva la posici贸n
+del m谩ximo. Implementar 3 veces utilizando for, while y do while*/
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -16,10 +16,10 @@ int main() {
     file = fopen("NUMEROS.txt", "r");
     if (file == NULL) {
         printf("Error al abrir el archivo\n");
-        return 1;
-    }
 
-    // Leer la cantidad de n鷐eros
+    }else{
+
+    // Leer la cantidad de n煤meros
     fscanf(file, "%d", &n);
     for (i = 0; i < n; i++) {
         fscanf(file, "%d", &v[i]);
@@ -30,6 +30,8 @@ int main() {
 
     fclose(file); // Cerrar el archivo
 
+    }
+
     // Mostrar el vector
     printf("Vector de enteros:\n");
     for (i = 0; i < n; i++) {
@@ -38,7 +40,7 @@ int main() {
     printf("\n");
 
 
-    // Encontrar y mostrar la posici髇 del m醲imo usando las tres funciones
+    // Encontrar y mostrar la posici贸n del m谩ximo usando las tres funciones
     printf("La posicion del maximo (for) es: %d\n", encuentrapos_for(v, n));
     printf("La posicion del maximo (while) es: %d\n", encuentrapos_while(v, n));
     printf("La posicion del maximo (do while) es: %d\n", encuentrapos_do_while(v, n));
@@ -46,7 +48,7 @@ int main() {
     return 0;
 }
 
-// Funci髇 que encuentra la posici髇 del m醲imo usando for
+// Funci贸n que encuentra la posici贸n del m谩ximo usando for
 int encuentrapos_for(int v[], int n) {
 int max=v[0],pos=0,i;
 
@@ -58,7 +60,7 @@ for (i=1;i<n;i++){
 return pos+1;
 }
 
-// Funci髇 que encuentra la posici髇 del m醲imo usando while
+// Funci贸n que encuentra la posici贸n del m谩ximo usando while
 int encuentrapos_while(int v[], int n) {
     int max = v[0], pos = 0, i = 1;
     while (i < n) {
@@ -68,10 +70,10 @@ int encuentrapos_while(int v[], int n) {
         }
         i++;
     }
-    return pos + 1; // Retorna la posici髇 en base 1
+    return pos + 1; // Retorna la posici贸n en base 1
 }
 
-// Funci髇 que encuentra la posici髇 del m醲imo usando do while
+// Funci贸n que encuentra la posici贸n del m谩ximo usando do while
 int encuentrapos_do_while(int v[], int n) {
     int max = v[0], pos = 0, i = 1;
     if (n > 1) {
@@ -83,5 +85,5 @@ int encuentrapos_do_while(int v[], int n) {
             i++;
         } while (i < n);
     }
-    return pos + 1; // Retorna la posici髇 en base 1
+    return pos + 1; // Retorna la posici贸n en base 1
 }
