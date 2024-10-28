@@ -1,4 +1,4 @@
-/*Ordene alfabéticamente el arreglo de Personas (utilizando el método que quiera), y luego muéstrelo.*/
+/*Ordene alfabÃ©ticamente el arreglo de Personas (utilizando el mÃ©todo que quiera), y luego muÃ©strelo.*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -24,16 +24,18 @@ int main() {
 
     if (archivo == NULL) {
         printf("No se pudo abrir el archivo.\n");
-       return 1;
-    }
+      
+    }else{
 
     n = 0;
-    while (fscanf(archivo, "%s %c %d %f", personas[n].nombre, &personas[n].sexo, &personas[n].edad, &personas[n].altura) != EOF) {
+    fscanf(archivo, "%s %c %d %f", personas[n].nombre, &personas[n].sexo, &personas[n].edad, &personas[n].altura);
+    while (!feof(archivo)) {
         n++;
+        fscanf(archivo, "%s %c %d %f", personas[n].nombre, &personas[n].sexo, &personas[n].edad, &personas[n].altura)
     }
 
     fclose(archivo);
-
+    }
   ordenarPersonasPorNombre(personas,n);
 
     for (int i = 0; i < n; i++) {
@@ -45,7 +47,7 @@ int main() {
     return 0;
 }
 
-// Función para ordenar personas por nombre utilizando el método de burbuja
+// FunciÃ³n para ordenar personas por nombre utilizando el mÃ©todo de burbuja
 void ordenarPersonasPorNombre(Persona personas[], int n) {
     Persona temp;
     for (int i = 0; i < n - 1; i++) {
