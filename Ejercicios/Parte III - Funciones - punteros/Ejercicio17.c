@@ -1,8 +1,6 @@
-/* Escribir una funciÛn llamada esPalindromo que tome una cadena como par·metro y determine si es un
-palÌndroma (se lee igual de izquierda a derecha que de derecha a izquierda). Utiliza esta funciÛn para
+/* Escribir una funci√≥n llamada esPalindromo que tome una cadena como par√°metro y determine si es un
+pal√≠ndroma (se lee igual de izquierda a derecha que de derecha a izquierda). Utiliza esta funci√≥n para
 verificar si una palabra ingresada por el usuario lo es o no.*/
-
-#include <stdio.h>
 
 #include <stdio.h>
 #include <string.h>
