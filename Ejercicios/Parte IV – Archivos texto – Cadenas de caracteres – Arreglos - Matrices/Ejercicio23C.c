@@ -1,6 +1,4 @@
-/* buscar una palabra específica (leída desde teclado previamente) en un archivo de texto e indicar
-cuántas veces aparece.
-*/
+
 /* buscar una palabra específica (leída desde teclado previamente) en un archivo de texto e indicar
 cuántas veces aparece.
 */
