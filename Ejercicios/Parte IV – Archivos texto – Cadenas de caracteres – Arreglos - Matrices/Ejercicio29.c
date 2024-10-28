@@ -1,9 +1,9 @@
 /*29. Sea A una matriz de NxM elementos reales, escribir funciones que permitan:
-a. hallar el promedio de los elementos positivos (función float).
-b. hallar el mínimo de las columnas impares (función int)
-c. hallar el máximo de las filas pares (función void)
-d. generar un archivo de texto que contengas una línea por cada fila de la matriz que tienen todos los
-valores pares, colocando en la línea NROFILA SUMPARES
+a. hallar el promedio de los elementos positivos (funciÃ³n float).
+b. hallar el mÃ­nimo de las columnas impares (funciÃ³n int)
+c. hallar el mÃ¡ximo de las filas pares (funciÃ³n void)
+d. generar un archivo de texto que contengas una lÃ­nea por cada fila de la matriz que tienen todos los
+valores pares, colocando en la lÃ­nea NROFILA SUMPARES
 
 */
 
@@ -86,10 +86,10 @@ float promedioPositivos(float matriz[MAXFILAS][MAXCOLUMNAS], int filas, int colu
     return (contador > 0) ? (suma / contador) : 0;
 }
 
-// b) Hallar el mínimo de las columnas impares
+// b) Hallar el mÃ­nimo de las columnas impares
 int minimoColumnasImpares(float matriz[MAXFILAS][MAXCOLUMNAS], int filas, int columna) {
     int i;
-    int minimo = (int)matriz[0][columna];  // Asumimos el primer valor como mínimo
+    int minimo = (int)matriz[0][columna];  // Asumimos el primer valor como mÃ­nimo
 
     for (i = 1; i < filas; i++) {
         if (matriz[i][columna] < minimo) {
@@ -100,7 +100,7 @@ int minimoColumnasImpares(float matriz[MAXFILAS][MAXCOLUMNAS], int filas, int co
     return minimo;
 }
 
-// c) Hallar el máximo de las filas pares
+// c) Hallar el mÃ¡ximo de las filas pares
 void maximoFilasPares(float matriz[MAXFILAS][MAXCOLUMNAS], int filas, int columnas) {
     int i, j;
     float maximo;
