@@ -22,6 +22,7 @@ escribir el main.c con la invocacion subproframas desarrolados declaraciones def
 
 */
 #include <stdio.h>
+#include <stdlib.h>
 
 
 typedef struct {
@@ -35,11 +36,11 @@ typedef struct {
 void generarMatrizYArchivo(int matriz[][200]) {
     FILE *archivoPrestamos = fopen("prestamos.dat", "rb");
     FILE *archivoVencimiento = fopen("vencenoviembre.txt", "w");
-
+     Prestamo prestamo;
     if (archivoPrestamos == NULL || archivoVencimiento == NULL) {
         perror("Error al abrir los archivos");
-        return;
-    }
+        
+    }else{
 
     // Inicialización de la matriz con ceros
     for (int i = 0; i < 100; i++) {
@@ -48,7 +49,7 @@ void generarMatrizYArchivo(int matriz[][200]) {
         }
     }
 
-    Prestamo prestamo;
+  
     while (fread(&prestamo, sizeof(Prestamo), 1, archivoPrestamos) == 1) {
         // Verificar si el vencimiento es en noviembre
         if (prestamo.fechavencimiento[3] == '1' && prestamo.fechavencimiento[4] == '1') {
@@ -59,7 +60,7 @@ void generarMatrizYArchivo(int matriz[][200]) {
 
     fclose(archivoPrestamos);
     fclose(archivoVencimiento);
-
+    }
     // Imprimir la matriz
     printf("Matriz P:\n");
     for (int i = 0; i < 100; i++) {
