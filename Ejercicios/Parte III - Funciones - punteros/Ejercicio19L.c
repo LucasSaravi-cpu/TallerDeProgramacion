@@ -15,8 +15,8 @@ int main() {
 
     if (n <= 0) {
         printf("La cantidad de personas debe ser mayor que 0.\n");
-        return 1;
-    }
+       
+    }else{
 
     for (int i = 0; i < n; i++) {
         printf("Ingrese la edad de la persona %d: ", i + 1);
@@ -24,20 +24,20 @@ int main() {
         clasificarEdad(edad, &cantidadNino, &cantidadAdolescente, &cantidadJoven, &cantidadAdulto);
     }
 
-    printf("\nCantidad de niños: %d\n", cantidadNino);
+    printf("\nCantidad de niÃ±os: %d\n", cantidadNino);
     printf("Cantidad de adolescentes: %d\n", cantidadAdolescente);
-    printf("Cantidad de adultos jóvenes: %d\n", cantidadJoven);
+    printf("Cantidad de adultos jÃ³venes: %d\n", cantidadJoven);
     printf("Cantidad de adultos: %d\n", cantidadAdulto);
 
     categoriaMasNumerosa(cantidadNino, cantidadAdolescente, cantidadJoven, cantidadAdulto);
-
+    }
     return 0;
 }
 
 
 void clasificarEdad(int edad, int *cantidadNino, int *cantidadAdolescente, int *cantidadJoven, int *cantidadAdulto) {
     if (edad <= 11) {
-        printf("La persona es un niño.\n");
+        printf("La persona es un niÃ±o.\n");
         (*cantidadNino)++;
     } else if (edad <= 17) {
         printf("La persona es un adolescente.\n");
@@ -54,12 +54,12 @@ void clasificarEdad(int edad, int *cantidadNino, int *cantidadAdolescente, int *
 
 void categoriaMasNumerosa(int cantidadNino, int cantidadAdolescente, int cantidadJoven, int cantidadAdulto) {
     if (cantidadNino >= cantidadAdolescente && cantidadNino >= cantidadJoven && cantidadNino >= cantidadAdulto) {
-        printf("La categoría más numerosa es 'niño'.\n");
+        printf("La categorÃ­a mÃ¡s numerosa es 'niÃ±o'.\n");
     } else if (cantidadAdolescente >= cantidadJoven && cantidadAdolescente >= cantidadAdulto) {
-        printf("La categoría más numerosa es 'adolescente'.\n");
+        printf("La categorÃ­a mÃ¡s numerosa es 'adolescente'.\n");
     } else if (cantidadJoven >= cantidadAdulto) {
-        printf("La categoría más numerosa es 'adulto joven'.\n");
+        printf("La categorÃ­a mÃ¡s numerosa es 'adulto joven'.\n");
     } else {
-        printf("La categoría más numerosa es 'adulto'.\n");
+        printf("La categorÃ­a mÃ¡s numerosa es 'adulto'.\n");
     }
 }
