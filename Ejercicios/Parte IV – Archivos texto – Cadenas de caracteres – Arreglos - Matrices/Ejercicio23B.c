@@ -1,6 +1,7 @@
 /*contar el número de palabras en un archivo de texto, considerando que las palabras están separadas
 por espacios, tabulaciones o saltos de líneas*/
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
     FILE *archivo;
@@ -10,8 +11,8 @@ int main() {
     archivo = fopen("archivo.txt", "r");
     if (archivo == NULL) {
         printf("Error al abrir el archivo\n");
-        return 1;
-    }
+      
+    }else{
 
 
     while (fscanf(archivo, "%s", palabra) == 1) {
@@ -19,6 +20,8 @@ int main() {
     }
 
     fclose(archivo);
+
+    }
     printf("El numero de palabras son : %d\n", words);
     return 0;
 }
