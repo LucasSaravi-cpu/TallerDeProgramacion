@@ -1,10 +1,10 @@
 /*Definir una estructura llamada Persona que tenga los campos nombre, sexo, edad y altura. Definir un arreglo
 de estructuras Persona. Escribir un programa que lea los datos de n personas desde un archivo de texto (una
-persona por línea) y los almacene en el arreglo. Para luego informar:
+persona por lÃ­nea) y los almacene en el arreglo. Para luego informar:
 a. La altura promedio de las personas.
 b. La edad promedio de las personas.
 c. Porcentaje de personas con edad mayor al promedio
-d. Cantidad de personas en un rango de alturas leído por teclado.
+d. Cantidad de personas en un rango de alturas leÃ­do por teclado.
 e. Diferencia de altura promedio entre mujeres y varones*/
 
 #include <stdio.h>
@@ -35,16 +35,18 @@ int main() {
 
     if (archivo == NULL) {
         printf("No se pudo abrir el archivo.\n");
-       return 1;
-    }
+    
+    }else{
 
     n = 0;
-    while (fscanf(archivo, "%s %c %d %f", personas[n].nombre, &personas[n].sexo, &personas[n].edad, &personas[n].altura) != EOF) {
+    fscanf(archivo, "%s %c %d %f", personas[n].nombre, &personas[n].sexo, &personas[n].edad, &personas[n].altura);
+    while (!feof(archivo)) {
         n++;
+        fscanf(archivo, "%s %c %d %f", personas[n].nombre, &personas[n].sexo, &personas[n].edad, &personas[n].altura);
     }
 
     fclose(archivo);
-
+    }
 
     float alturaPromedio = calcularAlturaPromedio(personas, n);
     float edadPromedio = calcularEdadPromedio(personas, n);
