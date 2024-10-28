@@ -1,10 +1,8 @@
-/* Para N personas se registró el peso y la altura, calcular sus índices de masa corporal y determinar e informar
-el porcentaje de los que tienen un índice normal (18.5 <= ICM <= 24.9). Implementar y utilizar la función
-IMC correctamente parametrizada que devuelva verdadero si el índice es normal y falso en caso contrario.
+/* Para N personas se registrÃ³ el peso y la altura, calcular sus Ã­ndices de masa corporal y determinar e informar
+el porcentaje de los que tienen un Ã­ndice normal (18.5 <= ICM <= 24.9). Implementar y utilizar la funciÃ³n
+IMC correctamente parametrizada que devuelva verdadero si el Ã­ndice es normal y falso en caso contrario.
 */
 
-
-#include <stdio.h>
 
 #include <stdio.h>
 
