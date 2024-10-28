@@ -5,6 +5,7 @@ c. hallar el máximo de las posiciones pares (función void)
 d. generar un vector B con los elementos de A que sean mayores a K (K debe leerse*/
 
 #include <stdio.h>
+#include <stdlib.h>
 #define MAXELEMENTOS 100
 
 // Funciones
