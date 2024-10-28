@@ -1,7 +1,7 @@
 /* Sea A un vector de N elementos enteros, escribir funciones que permitan:
-a. hallar el promedio de los elementos positivos (funci髇 float).
-b. hallar el m韓imo de los impares (funci髇 int)
-c. hallar el m醲imo de las posiciones pares (funci髇 void)
+a. hallar el promedio de los elementos positivos (funci贸n float).
+b. hallar el m铆nimo de los impares (funci贸n int)
+c. hallar el m谩ximo de las posiciones pares (funci贸n void)
 d. generar un vector B con los elementos de A que sean mayores a K (K debe leerse*/
 
 #include <stdio.h>
@@ -24,15 +24,15 @@ int main() {
     FILE *archivo = fopen("vector.txt", "r");
     if (archivo == NULL) {
         printf("Error al abrir el archivo\n");
-        return 1;
-    }
+       
+    }else{
 
     fscanf(archivo, "%d", &n);
     for (int i = 0; i < n; i++) {
         fscanf(archivo, "%d", &vector[i]);
     }
     fclose(archivo);
-
+    
 
     printf("Elementos del vector:\n");
     for (int i = 0; i < n; i++) {
@@ -44,7 +44,7 @@ int main() {
     float promedio = promedioPositivos(vector, n);
     printf("El promedio de los elementos positivos es: %.2f\n", promedio);
 
-    // Calcular y mostrar el m韓imo de los impares
+    // Calcular y mostrar el m铆nimo de los impares
     int minimo = minimoImpares(vector, n);
     if (minimo != -1) {
         printf("El minimo de los impares es: %d\n", minimo);
@@ -66,11 +66,11 @@ int main() {
         printf("%d ", vectorB[i]);
     }
     printf("\n");
-
+    }
     return 0;
 }
 
-// Funci髇 para hallar el promedio de los elementos positivos
+// Funci贸n para hallar el promedio de los elementos positivos
 float promedioPositivos(int vector[], int n) {
     int contador = 0;
     float suma = 0.0;
@@ -85,7 +85,7 @@ float promedioPositivos(int vector[], int n) {
     return (contador > 0) ? suma / contador : 0.0;
 }
 
-// Funci髇 para hallar el m韓imo de los impares
+// Funci贸n para hallar el m铆nimo de los impares
 int minimoImpares(int vector[], int n) {
     int minimo = -1;
 
@@ -100,7 +100,7 @@ int minimoImpares(int vector[], int n) {
     return minimo;
 }
 
-// Funci髇 para hallar el m醲imo de las posiciones pares
+// Funci贸n para hallar el m谩ximo de las posiciones pares
 void maximoPosicionesPares(int vector[], int n) {
     int maximo = -1;
 
@@ -117,9 +117,9 @@ void maximoPosicionesPares(int vector[], int n) {
     }
 }
 
-// Funci髇 para generar un vector B con elementos mayores a K
+// Funci贸n para generar un vector B con elementos mayores a K
 void generarVectorB(int vector[], int n, int k, int vectorB[], int *size) {
-    *size = 0; // Inicializa el tama駉 del vector B
+    *size = 0; // Inicializa el tama帽o del vector B
 
     for (int i = 0; i < n; i++) {
         if (vector[i] > k) {
