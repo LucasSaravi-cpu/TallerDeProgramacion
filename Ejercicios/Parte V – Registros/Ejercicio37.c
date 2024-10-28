@@ -1,4 +1,4 @@
-/* Escribir una función que permita modificar la altura y el peso de una persona cuyo nombre se ingresa por
+/* Escribir una funciÃ³n que permita modificar la altura y el peso de una persona cuyo nombre se ingresa por
 teclado, si es que se encuentra en el arreglo, sino informarlo*/
 
 #include <stdio.h>
@@ -26,12 +26,14 @@ int main() {
 
     if (archivo == NULL) {
         printf("No se pudo abrir el archivo.\n");
-       return 1;
-    }
+    
+    }else{
 
     n = 0;
-    while (fscanf(archivo, "%s %c %d %f", personas[n].nombre, &personas[n].sexo, &personas[n].edad, &personas[n].altura) != EOF) {
+    fscanf(archivo, "%s %c %d %f", personas[n].nombre, &personas[n].sexo, &personas[n].edad, &personas[n].altura);
+    while (!feof(archivo)) {
         n++;
+        fscanf(archivo, "%s %c %d %f", personas[n].nombre, &personas[n].sexo, &personas[n].edad, &personas[n].altura);
     }
 
      for (int i = 0; i < n; i++) {
@@ -40,7 +42,7 @@ int main() {
     }
 
     fclose(archivo);
-
+    }
     modificarAlturaYPeso(personas,n);
 
     for (int i = 0; i < n; i++) {
