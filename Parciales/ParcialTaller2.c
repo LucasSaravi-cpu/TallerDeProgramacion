@@ -62,7 +62,7 @@ int main() {
     while (fread(&prestamo, sizeof(Prestamo), 1, archivoPrestamos) == 1) {
 
         if (prestamo.fechavencimiento[3] == '1' && prestamo.fechavencimiento[4] == '1') {
-            matriz[prestamo.idsocio - 1][prestamo.idlibro - 1] = 1; // Marcar en la matriz
+            matriz[prestamo.idsocio + 1][prestamo.idlibro + 1] = 1; // Marcar en la matriz
             fprintf(archivoVencimiento, "%d %s %s\n", prestamo.idsocio, prestamo.idEjemplar, prestamo.fechavencimiento);
         }
     }
