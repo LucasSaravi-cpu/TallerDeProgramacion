@@ -1,28 +1,29 @@
-/*
-Una biblioteca tiene un archivo binario prestamos.dat que representa los ejemlares prestados a sus socios con el sigueinte formato de registro
+/*Una biblioteca tiene un archivo binario PRESTAMOS.DAT que representa los ejemplares prestados a sus 
+socios, con el siguiente formato de registro.
+ typedef struct { 
+ short int idSocio; //representa el número de socio con rango 1 a 100. 
+ short int idLibro; // representa el identificador de libro con rango 1 a 200
+ char idEjemplar[8] //Cadena que representa el código del ejemplar.
+ char fechaVencimiento [9]; //cadena con formato aaaammdd, es la fecha límite para devolver
+ } rgPrestamos; 
+Desarrollar en C subprogramas para:
+a) Partiendo desde el archivo PRESTAMOS.DAT y teniendo en cuenta solamente los préstamos con 
+vencimiento en el mes de noviembre del corriente año, genere simultáneamente:
+i) una matriz P de 100 x 200 donde las filas representan el número de socio y las columnas el número 
+de libro, almacenando un 1 (uno) en P[i][j] si el socio i+1 debe devolver el libro número j+1, 0 
+(cero) en caso contrario.
+ii) un archivo de texto VENCENOVIEMBRE.TXT, con el siguiente formato en cada línea: 
+idSocio idEjemplar díaVencimiento
+b) Mediante una función int, a partir de P devolver la cantidad de socios que no tienen que devolver 
+ningún libro en noviembre
+Escribir el main.c con la invocación a los subprogramas desarrollados, declaraciones, definiciones e 
+inicializaciones que sean necesarias. NO desarrollar la carga de ninguna estructura ni archivo, a menos 
+que se pida explícitamente*/
 
-typedef struct{
-short int idsocio;
-short int idlibro;
-char idEjemplar[8]
-char fechavencimiento[9]
-}
-
-desarrolar en en c sub programas para 
-
-a) partiendo desde archivo prestamos.dat y teniendo en cuenta solamente los prestamos con vencimiento en el mes de noviembre del corriente año genere simultaneamente
-
-una matriz P de 100x200 donde las filas representan el nmero de socios y las columnas el numero de libro , almacenando 1 en p[i][j] si el socio i+1 debe devolvevr el libro numero j+1 0 en caso contrario
-
-un archivo de texto vencenoviembre.txt con el siguiente formato en cada linea idsocio idejemplar dia vencimiento
-
-B) mediante una funion int a partir de P devolver la cantidad de socos que no tienen que devolver ningun libro
-
-escribir el main.c con la invocacion subproframas desarrolados declaraciones definiciones e inicializaciones.}
-
-*/
 #include <stdio.h>
 #include <stdlib.h>
+#define n 100
+#define m 200
 
 
 typedef struct {
@@ -32,26 +33,34 @@ typedef struct {
     char fechavencimiento[10]; // Ajuste del tamaño para incluir el carácter nulo '\0'
 } Prestamo;
 
-// Función para generar la matriz y el archivo de texto
-void generarMatrizYArchivo(int matriz[][200]) {
+
+int contarSociosSinLibros(int matriz[n][m]);
+
+
+int main() {
+
+    int matriz[n][m];
+
+
     FILE *archivoPrestamos = fopen("prestamos.dat", "rb");
     FILE *archivoVencimiento = fopen("vencenoviembre.txt", "w");
      Prestamo prestamo;
+
     if (archivoPrestamos == NULL || archivoVencimiento == NULL) {
         perror("Error al abrir los archivos");
-        
+
     }else{
 
-    // Inicialización de la matriz con ceros
-    for (int i = 0; i < 100; i++) {
-        for (int j = 0; j < 200; j++) {
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
             matriz[i][j] = 0;
         }
     }
 
-  
+
     while (fread(&prestamo, sizeof(Prestamo), 1, archivoPrestamos) == 1) {
-        // Verificar si el vencimiento es en noviembre
+
         if (prestamo.fechavencimiento[3] == '1' && prestamo.fechavencimiento[4] == '1') {
             matriz[prestamo.idsocio - 1][prestamo.idlibro - 1] = 1; // Marcar en la matriz
             fprintf(archivoVencimiento, "%d %s %s\n", prestamo.idsocio, prestamo.idEjemplar, prestamo.fechavencimiento);
@@ -60,7 +69,8 @@ void generarMatrizYArchivo(int matriz[][200]) {
 
     fclose(archivoPrestamos);
     fclose(archivoVencimiento);
-    }
+
+
     // Imprimir la matriz
     printf("Matriz P:\n");
     for (int i = 0; i < 100; i++) {
@@ -69,19 +79,32 @@ void generarMatrizYArchivo(int matriz[][200]) {
         }
         printf("\n");
     }
+
+
+
+
+    int sociosSinLibros = contarSociosSinLibros(matriz);
+    printf("Cantidad de socios sin libros pendientes: %d\n", sociosSinLibros);
+
+
+    }
+
+
+    return 0;
 }
 
-// Función para contar socios sin libros pendientes
-int contarSociosSinLibros(int matriz[][200]) {
+
+
+int contarSociosSinLibros(int matriz[n][m]) {
     int contador = 0;
 
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < n; i++) {
         int tieneLibros = 0;
 
-        for (int j = 0; j < 200; j++) {
+        for (int j = 0; j < m; j++) {
             if (matriz[i][j] == 1) {
                 tieneLibros++;
-              
+
             }
         }
 
@@ -92,19 +115,6 @@ int contarSociosSinLibros(int matriz[][200]) {
 
     return contador;
 }
-
-int main() {
-    int matriz[100][200]; // Matriz para almacenar la información
-    generarMatrizYArchivo(matriz);
-
-    int sociosSinLibros = contarSociosSinLibros(matriz);
-    printf("Cantidad de socios sin libros pendientes: %d\n", sociosSinLibros);
-
-    return 0;
-}
-
-
-
 
 /*Completar
 
