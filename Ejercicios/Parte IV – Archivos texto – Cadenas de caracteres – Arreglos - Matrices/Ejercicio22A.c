@@ -54,11 +54,8 @@ int main() {
 
 
 
-
-
-
-
     printf("\nLa cadena más larga es: %s\n", cadenaMasLarga);
 
     return 0;
 }
+
