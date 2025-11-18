@@ -1,4 +1,4 @@
-/*El sector taller de una empresa de transporte tiene la informacion del año 2024 de mantenimiento
+/*El sector taller de una empresa de transporte tiene la informacion del aÃ±o 2024 de mantenimiento
 y reparacion realizadas sobre sus unidades en un archivo de texto  llamado TALLER2024.TXT
 Cada linea del archivo contiene los siguientes elementos : unidad ( entero entre 1 y 80 ) , mes (entero  entre 1 y 12 )
 importe ( costo del mantenimiento o reparacion ) , tipo ( 'M' mantenimiento y 'R'  reparacion )
@@ -86,31 +86,44 @@ void GeneraArhivoBinario (float Matriz[][MaxColumna]){
 
 FILE*ArchivoMayorCosto= fopen ("MAYORCOSTO.DAT","wb");
 float CostoTotal;
-rgmayorcosto mayorcosto;
+rgmayorcosto vec[MaxFila];
+int cant = 0;
 
 if (ArchivoMayorCosto ==NULL) {
 
     printf("El archivo no se pudo crear ");
 
 }else {
+   
+    for(int i=0; i<MaxFila; i++){
+        CostoTotal = 0;
 
-   for ( int i=0 ; i<MaxFila ;i++) {
-
-       CostoTotal=0;
-    for ( int j=0 ; j<MaxColumna ; j++ )
-        CostoTotal+= Matriz[i][j] ;
-
-
-        if ( CostoTotal > 500000) {
-
-            mayorcosto.unidad= i +1;
-            mayorcosto.CostoAnual= CostoTotal;
-
-            fwrite(&mayorcosto,sizeof(rgmayorcosto),1,ArchivoMayorCosto);
-
+        for(int j=0; j<MaxColumna; j++){
+            CostoTotal += Matriz[i][j];
         }
 
-   }
+        if(CostoTotal > 500000){
+            vec[cant].unidad = i + 1;    
+            vec[cant].CostoAnual = CostoTotal;
+            cant++;
+        }
+    }
+
+    // Ordenar DESCENDENTE por unidad (burbuja simple)
+    for(int i=0; i<cant-1; i++){
+        for(int j=i+1; j<cant; j++){
+            if(vec[i].unidad < vec[j].unidad){
+                rgmayorcosto aux = vec[i];
+                vec[i] = vec[j];
+                vec[j] = aux;
+            }
+        }
+    }
+
+    // Grabar al archivo ya ordenado
+    for(int i=0; i<cant; i++){
+        fwrite(&vec[i], sizeof(rgmayorcosto), 1, ArchivoMayorCosto);
+    }
 
 }
 
@@ -148,5 +161,6 @@ for ( int mes =0 ; mes<MaxColumna ; mes++){
 return mesmax+1;
 
 }
+
 
 
