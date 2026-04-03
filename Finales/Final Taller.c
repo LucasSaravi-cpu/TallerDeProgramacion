@@ -195,25 +195,28 @@ void productosMaxMin(char MS[][MAX_PROD], int *prodMax, int *prodMin){
 
 int tieneCotillonCompleto(char MS[][MAX_PROD], int distribuidor){
 
+    int resultado = 1; 
+
     if(distribuidor < 1 || distribuidor > MAX_DIST){
-        return 0;
-    }
+        resultado = 0;
+    } else {
 
-    int i = distribuidor - 1;
+        int i = distribuidor - 1;
 
-    for(int cod = 100; cod <= 200; cod++){
+        for(int cod = 100; cod <= 200 && resultado == 1; cod++){
 
-        if(cod % 2 == 0){
+            if(cod % 2 == 0){
 
-            int j = cod - 100;
+                int j = cod - 100;
 
-            if(MS[i][j] != 'S'){
-                return 0;
+                if(MS[i][j] != 'S'){
+                    resultado = 0;
+                }
             }
         }
     }
 
-    return 1;
+    return resultado;
 }
 
 
